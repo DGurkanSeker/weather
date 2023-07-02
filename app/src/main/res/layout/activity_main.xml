@@ -4,61 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="73dp"
         android:layout_marginTop="39dp"
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/babyblue"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/temperature"
+        android:textAlignment="center"
+        android:textColor="@color/mustard"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cityName"
-        app:layout_constraintTop_toBottomOf="@+id/searchText" />
+        app:layout_constraintStart_toEndOf="@+id/temperature"
+        app:layout_constraintTop_toBottomOf="@+id/searchbutton" />
 
     <TextView
         android:id="@+id/humidity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_width="93dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/babyblue"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/mustard"
+
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <TextView
         android:id="@+id/cityName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_width="93dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/babyblue"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/description"
+        android:textAlignment="center"
+        android:textColor="@color/mustard"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/temperature"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchText" />
 
     <TextView
         android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="72dp"
         android:layout_marginTop="39dp"
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/babyblue"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="center"
+        android:textColor="@color/mustard"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/description"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/description"
-        app:layout_constraintTop_toBottomOf="@+id/searchbutton" />
+        app:layout_constraintStart_toEndOf="@+id/cityName"
+        app:layout_constraintTop_toBottomOf="@+id/searchText" />
 
     <EditText
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/mustard"
         android:id="@+id/searchText"
         android:layout_width="213dp"
         android:layout_height="48dp"
         android:layout_marginStart="37dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:ems="10"
+        android:paddingStart="14dp"
+        android:hint="City,Province etc."
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,9 +92,21 @@
         android:id="@+id/searchbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="59dp"
-        android:text="Button"
+        android:layout_marginEnd="37dp"
+        android:text="Search"
+        android:backgroundTint="@color/mustard"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchText"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
