@@ -5,6 +5,7 @@ import android.icu.text.DecimalFormat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -14,6 +15,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import org.json.JSONObject
+import org.w3c.dom.Text
 import java.io.IOException
 lateinit var cityName:TextView
 lateinit var description:TextView
@@ -21,6 +23,8 @@ lateinit var temperature:TextView
 lateinit var humidity:TextView
 lateinit var searchText:TextView
 lateinit var searchButton:Button
+lateinit var weatherimage:ImageView
+
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         cityName = findViewById(R.id.cityName)
         description = findViewById(R.id.description)
         temperature = findViewById(R.id.temperature)
-        humidity = findViewById(R.id.humidity)
+        humidity = findViewById(R.id.humudity)
         searchText = findViewById(R.id.searchText)
         searchButton = findViewById(R.id.searchbutton)
-
+        weatherimage = findViewById(R.id.weatherimage)
         searchButton.setOnClickListener {
             fetchData()
         }
@@ -96,9 +100,26 @@ private suspend fun displayWeatherData(weatherData: WeatherData){
             val decimalFormat = DecimalFormat("#.#")
             val tempInCels = weatherData.temperature?.minus(273)
             val tempInCelsFormatted = decimalFormat.format(tempInCels)
+            val weatherNow:String = weatherData.description.toString()
             temperature.text = "${tempInCelsFormatted} °C"
             description.text = "${weatherData.description}"
             humidity.text ="${weatherData.humidity}%"
+            if(weatherNow == "light rain" || weatherNow == "heavy rain" || weatherNow == "moderate rain")
+            {
+                weatherimage.setImageResource(R.drawable.rain)
+            }
+            else if (weatherNow == "clear sky")
+            {
+                weatherimage.setImageResource(R.drawable.sunny)
+            }
+            else if (weatherNow == "moderate snow" || weatherNow == "light snow" || weatherNow == "heavy snow")
+            {
+                weatherimage.setImageResource(R.drawable.snowy)
+            }
+            else if(weatherNow == "few clouds" || weatherNow == "scattered clouds" || weatherNow == "overcast clouds")
+            {
+                weatherimage.setImageResource(R.drawable.cloudy)
+            }
         }
     }
 }

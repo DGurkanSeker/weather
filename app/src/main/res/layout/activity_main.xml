@@ -4,87 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="93dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="39dp"
-        android:background="@drawable/rounds"
-        android:backgroundTint="@color/babyblue"
+        android:layout_width="255dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/mustard"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature"
-        app:layout_constraintTop_toBottomOf="@+id/searchbutton" />
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityName" />
 
     <TextView
-        android:id="@+id/humidity"
-        android:layout_width="93dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/rounds"
-        android:backgroundTint="@color/babyblue"
+        android:id="@+id/humudity"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="164dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/mustard"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/humimage"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:srcCompat="@drawable/rainy" />
 
     <TextView
         android:id="@+id/cityName"
-        android:layout_width="93dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/rounds"
-        android:backgroundTint="@color/babyblue"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/mustard"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/temperature"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchText" />
 
     <TextView
         android:id="@+id/temperature"
-        android:layout_width="93dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="39dp"
-        android:background="@drawable/rounds"
-        android:backgroundTint="@color/babyblue"
+        android:layout_width="121dp"
+        android:layout_height="78dp"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/mustard"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/description"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cityName"
-        app:layout_constraintTop_toBottomOf="@+id/searchText" />
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <EditText
-        android:background="@drawable/rounds"
-        android:backgroundTint="@color/mustard"
         android:id="@+id/searchText"
         android:layout_width="213dp"
         android:layout_height="48dp"
         android:layout_marginStart="37dp"
         android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:background="@drawable/rounds"
+        android:backgroundTint="@color/mustard"
         android:ems="10"
-        android:paddingStart="14dp"
         android:hint="City,Province etc."
         android:inputType="textPersonName"
+        android:paddingStart="14dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,18 +94,21 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="37dp"
-        android:text="Search"
         android:backgroundTint="@color/mustard"
+        android:text="Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/searchText"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/weatherimage"
+        android:layout_width="134dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="125dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humidity" />
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:srcCompat="@drawable/sunny" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
